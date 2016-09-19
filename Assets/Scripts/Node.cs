@@ -7,13 +7,25 @@ public class Node
     public bool _walkable;
     public float _gCost;
     public float _hCost;
-    public float _fCost;
+    public float _terrainCost;
 
-    public Node(Vector3 position, bool walkable, float gCost, float hCost)
+
+    public float fCost
+    {
+        get
+        {
+            return _gCost + _hCost;
+        }
+    }
+
+
+    public Node(Vector3 position, bool walkable = true, float gCost = 0, float hCost = 0, float terrainCost = 0)
     {
         _position = position;
         _walkable = walkable;
         _gCost = gCost;
         _hCost = hCost;
+        _terrainCost = terrainCost;
     }
+
 }

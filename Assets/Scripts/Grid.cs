@@ -3,8 +3,8 @@ using System.Collections;
 
 [RequireComponent(typeof(Node))]
 public class Grid : MonoBehaviour {
-    private Node node;
 
+    public Node[,] grid;
     public Node[] _open;
     public Node[] _closed;
 
@@ -21,7 +21,9 @@ public class Grid : MonoBehaviour {
         {
             for (int y = 0; y < xSize; y++)
             {
+                Node node = new Node(new Vector3(x,0,y));
 
+                grid[x, y] = node;
             }
         }
     }
