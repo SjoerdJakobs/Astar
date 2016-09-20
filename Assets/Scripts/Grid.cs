@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Node))]
+
 public class Grid : MonoBehaviour {
 
     public Node[,] grid;
-    public Node[] _open;
-    public Node[] _closed;
 
-
+    [SerializeField]
     private int xSize;
+    [SerializeField]
     private int ySize;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -22,7 +22,7 @@ public class Grid : MonoBehaviour {
             for (int y = 0; y < xSize; y++)
             {
                 Node node = new Node(new Vector3(x,0,y));
-
+                
                 grid[x, y] = node;
             }
         }

@@ -9,6 +9,7 @@ public class Node
     public float _hCost;
     public float _terrainCost;
 
+    public Node _parentNode;
 
     public float fCost
     {
@@ -19,13 +20,12 @@ public class Node
     }
 
 
-    public Node(Vector3 position, bool walkable = true, float gCost = 0, float hCost = 0, float terrainCost = 0)
+    public Node(Vector3 position, bool walkable = true, float gCost = 0, float hCost = 0)
     {
         _position = position;
         _walkable = walkable;
         _gCost = gCost;
         _hCost = hCost;
-        _terrainCost = terrainCost;
     }
 
 }
