@@ -19,7 +19,6 @@ public class Node
         }
     }
 
-
     public Node(Vector3 position, bool walkable = true, float gCost = 0, float hCost = 0)
     {
         _position = position;

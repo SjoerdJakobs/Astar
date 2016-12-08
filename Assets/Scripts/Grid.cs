@@ -9,12 +9,32 @@ public class Grid : MonoBehaviour {
     private bool showGrid;//do you want to see the gizmo's in the editor?
     [SerializeField]
     private bool dynamicGrid;//do you want to update the grid for changes
-    //Bool
+                             //Bool
 
-    //LayerMasks
+    //LayerMasks    
     [SerializeField]
-    private LayerMask unwalkableMask;//the layermask that the obstacles will have where you cant walk.
-                                     //LayerMasls
+    private float spaceBetweenPoints;       //this value wil be used for the distance between points.
+    public float _spaceBetweenPoints
+    {
+        get { return spaceBetweenPoints; }
+        set { spaceBetweenPoints = value; }
+    }
+    [SerializeField]
+    private LayerMask[] detectableMasks;
+    private LayerMask detectableMask;
+    public LayerMask _detectableMask
+    {
+        get { return detectableMask; }
+        set { detectableMask = value; }
+    }
+    [SerializeField]
+    private LayerMask[] walkableMasks;
+    private LayerMask walkableMask;               //the layermask in here wil be seen as mesh that can be walked on.
+    public LayerMask _walkableMask
+    {
+        get { return walkableMask; }
+        set { walkableMask = value; }
+    }
 
     //Vector2
     [SerializeField]
