@@ -3,28 +3,36 @@ using System.Collections;
 
 public class Node
 {
-    public Vector3 _position;
-    public bool _walkable;
-    public float _gCost;
-    public float _hCost;
-    public float _terrainCost;
+    public Vector3 position { get; set; }
 
-    public Node _parentNode;
+    public bool walkable { get; set; }
+
+    public float gCost { get; set; }
+
+    public float hCost { get; set; }
+
+    public float terrainCost { get; set; }
 
     public float fCost
     {
-        get
-        {
-            return _gCost + _hCost;
-        }
+        get { return gCost + hCost + terrainCost; }
+    }
+
+    public Node parentNode { get; set; }
+
+    public void Reset()
+    {
+        gCost = 0;
+        hCost = 0;
+        parentNode = null;
     }
 
     public Node(Vector3 position, bool walkable = true, float gCost = 0, float hCost = 0)
     {
-        _position = position;
-        _walkable = walkable;
-        _gCost = gCost;
-        _hCost = hCost;
+        position = position;
+        walkable = walkable;
+        gCost = gCost;
+        hCost = hCost;
     }
 
 }
